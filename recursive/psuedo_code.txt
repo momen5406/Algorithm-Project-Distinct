@@ -1,0 +1,19 @@
+Algorithm Count_Distinct(A, size, index)
+  if index = size then
+    return 0
+
+  y ← Exists (A, index, index - 1)
+
+  if y = true then
+    return Count_Distinct(A, size, index + 1)
+
+  return 1 + Count_Distinct(A, size, index + 1)
+
+
+
+Algorithm Exists(A, index, search)
+  if search < 0 then return false
+
+  if A[index] = A[search] then return true
+
+  return Exists (A, index, search - 1)
